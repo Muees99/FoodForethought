@@ -16,7 +16,21 @@
   }
 } */
 
+
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-Regular.woff2') format('woff2'),
+    url('/fonts/Nohemi-Regular.woff') format('woff'),
+    url('/fonts/Nohemi-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
 body {
+  font-family: 'Nohemi', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -25,6 +39,17 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* Optionally, if you want to apply Inter font selectively */
+.nohemi {
+  font-family: 'Nohemi', sans-serif;
+}
+
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
 
 @layer utilities {
   .text-balance {
