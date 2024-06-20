@@ -56,3 +56,31 @@ body {
     text-wrap: balance;
   }
 }
+
+.gradient-text {
+  background-image: linear-gradient(71deg, #ff7c5b 5%, #8a50f0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* .custom-text {
+   width: 930.7px; 
+   height: 180px;
+  flex-grow: 0;
+  background-image: linear-gradient(71deg, #ff7c5b 5%, #8a50f0 116%);
+  font-family: 'Nohemi', sans-serif;
+  font-size: 90px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: -2px;
+  text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */

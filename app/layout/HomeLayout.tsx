@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { FiLoader } from 'react-icons/fi';
+import Waitlist from '../components/Waitlist';
 
 export default function HomeLayout({
   children,
@@ -24,6 +25,7 @@ export default function HomeLayout({
     } 
   return (
     <>
+    <Waitlist/>
     </>
   )
 }
