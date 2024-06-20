@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Ui/Button";
-import backgroundImage from"../../../public/assets/Foodwaitlist.svg";
+import backgroundImage from "../../../public/assets/Foodwaitlist.svg";
 
 function Waitlist() {
   return (
@@ -11,11 +11,20 @@ function Waitlist() {
       <div className="max-w-[1440px] mx-auto px-[4%]">
         <div className="flex flex-col md:flex-row justify-center items-center min-h-[550px]">
           <div className="flex flex-col items-center text-center">
-            <div
-              className="bg-[#8A50F0] text-white px-6 py-3 rounded-full mb-6"
-              style={{ maxWidth: "fit-content" }}
+            {/* <div
+              className="bg-[#8A50F0] text-white px-6 py-3 mb-6"
+              style={{
+                maxWidth: "fit-content",
+                padding: "4px 9.6px 4.8px 9.6px",
+                // margin:"12px  12px",
+                // margin: "0 359.9px 21.2px 359px",
+                borderRadius: "9.6px 9.6px 1px 9.6px", // Ensure corners have specific dimensions
+              }}
             >
               Coming soon
+            </div> */}
+            <div className="container bg-[#8A50F0] max-w-[211.1px] text-white mb-6 rounded-[9.6px_9.6px_1px_9.6px]">
+              <div className="px-[9.6px] py-[4.8px]">Coming soon</div>
             </div>
             <h1 className="gradient-text text-center font-semibold leading-none tracking-tight text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-[930.7px]">
               Start generating your own meal plans
@@ -31,13 +40,13 @@ function Waitlist() {
                 type="text"
                 placeholder="sample@email.com"
               />
-              <Button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#C566A6] text-white px-4 py-2 rounded-full">
+              <Button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0]  text-white px-4 py-2 rounded-full">
                 Join waitlist
               </Button>
             </div>
           </div>
         </div>
-        <div className=" flex justify-start items-start mr-40  mt-10 text-sm md:text-sm lg:text-md xl:text-lg ">
+        <div className=" flex justify-start items-start mr-40  mt-10 text-sm ">
           © 2024 FoodForethought. | All rights reserved.
         </div>
       </div>
