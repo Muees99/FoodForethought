@@ -46,7 +46,7 @@ function Waitlist() {
             </div>
           </div>
         </div>
-        <div className=" flex justify-start items-start mr-40  mt-10 text-sm ">
+        <div className=" flex justify-start items-start mr-40 mt-3 text-sm ">
           © 2024 FoodForethought. | All rights reserved.
         </div>
       </div>
