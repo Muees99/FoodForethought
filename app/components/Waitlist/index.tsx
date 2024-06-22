@@ -132,11 +132,11 @@ function Waitlist() {
             </p>
             <div className="relative w-full max-w-[400px]">
               <input
-                className="w-full p-4 pr-16 font-medium placeholder-opacity-100 border rounded-full focus:outline-none bg-transparent border-[#C566A6]"
+                className="w-full p-4 pr-16 font-medium placeholder-opacity-100 border rounded-full focus:outline-none  bg-neutral-800 text-[#FFFFFF] border-[#C566A6]"
                 type="text"
                 placeholder="sample@email.com"
               />
-              <Button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-white px-4 py-2 rounded-full">
+              <Button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full">
                 Join waitlist
               </Button>
             </div>
