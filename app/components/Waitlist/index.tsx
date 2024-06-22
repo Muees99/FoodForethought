@@ -104,7 +104,7 @@ function Waitlist() {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Overlay with opacity */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[#000] opacity-90"></div>
+      <div className="absolute top-0 left-0 w-full h-full"></div>
       {/* Video background */}
       <video
         className="absolute top-0 left-0 object-cover w-full h-full "
@@ -112,7 +112,7 @@ function Waitlist() {
         loop
         muted
       >
-        <source src="/assets/FFT video.mp4" type="video/mp4" />
+        <source src="/assets/FFTvideo.mp4" type="video/mp4" />
       </video>
 
       {/* Content */}
