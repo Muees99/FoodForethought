@@ -112,7 +112,7 @@ function Waitlist() {
         loop
         muted
       >
-        <source src="/assets/FFTvideo.mp4" type="video/mp4" />
+        <source src="/assets/FTvideo.mp4" type="video/mp4" />
       </video>
 
       {/* Content */}
