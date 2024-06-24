@@ -125,7 +125,7 @@ function Waitlist() {
             <h1 className="gradient-text text-center font-semibold leading-none tracking-tight text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-[930.7px]">
               Start generating your own meal plans
             </h1>
-            <p className="text-lg text-[#FFFFFF] font-medium leading-[1.55] max-w-[800px] mt-6 mb-10">
+            <p className=" text-base text-[#FFFFFF]  font-light leading-[1.55] max-w-[800px] mt-6 mb-10">
               Ditch the generic recommendations and get local meal plans based
               on your needs. Leave your email and we&apos;ll let you know when
               to begin!
