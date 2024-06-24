@@ -104,17 +104,17 @@ function Waitlist() {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Overlay with opacity */}
-      <div className="absolute top-0 left-0 w-full h-full"></div>
-      {/* Video background */}
-      <video
-        className="absolute top-0 left-0 object-cover w-full h-full "
-        autoPlay
-        loop
-        muted
-      >
-        <source src="/assets/FFTTvideo.mp4" type="video/mp4" />
-      </video>
-
+      <div className="absolute top-0 left-0 w-full h-full">
+        {/* Video background */}
+        <video
+          className="absolute top-0 left-0 object-cover w-full h-full "
+          autoPlay
+          loop
+          muted
+        >
+          <source src="/assets/FFTTvideo.mp4" type="video/mp4" />
+        </video>
+      </div>
       {/* Content */}
       <div className="relative z-10 max-w-[1440px] mx-auto sm:px-[5%] px-[4%]">
         <div className="flex flex-col md:flex-row justify-center items-center min-h-[550px]">
@@ -130,9 +130,9 @@ function Waitlist() {
               on your needs. Leave your email and we&apos;ll let you know when
               to begin!
             </p>
-            <div className="relative w-full max-w-[400px]">
+            <div className="relative w-full h-full max-w-[440px]">
               <input
-                className="w-full p-4 pr-16 font-medium placeholder-opacity-100 border rounded-full focus:outline-none  bg-neutral-800 text-[#FFFFFF] border-[#C566A6]"
+                className=" w-full p-4 pr-32 font-medium placeholder-opacity-100 border rounded-full focus:outline-none  bg-neutral-800 text-[#FFFFFF] border-[#C566A6]"
                 type="text"
                 placeholder="sample@email.com"
               />
