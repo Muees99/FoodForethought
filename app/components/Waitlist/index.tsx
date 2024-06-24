@@ -142,10 +142,11 @@ function Waitlist() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-start items-start mt-3 text-sm text-white w-full px-4">
-          <span className="mr-40">
-            © 2024 FoodForethought. | All rights reserved.
-          </span>
+        {/* Trademark Section and Positioning */}
+        <div className="flex flex-col justify-start items-start fixed bottom-0  mt-4 text-sm text-white w-full px-4">
+          {/* <span className="mr-40 "> */}© 2024 FoodForethought. | All rights
+          reserved.
+          {/* </span> */}
         </div>
       </div>
     </div>
