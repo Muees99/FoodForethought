@@ -140,8 +140,12 @@ function Waitlist() {
                 value={email}
                 onChange={handleInputChange}
                 placeholder="sample@email.com"
+                required
               />
-              <Button className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full">
+              <Button
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full"
+                type="submit"
+              >
                 Join waitlist
               </Button>
             </form>
