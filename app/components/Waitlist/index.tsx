@@ -79,13 +79,14 @@ function Waitlist() {
         redirect: "follow",
         body: JSON.stringify({ email }),
         headers: {
-          "Content-Type": "application/json",
+          // "Content-Type": "application/json",
+          "Content-Type": "text/plain;charset=utf-8",
         },
         // mode: "no-cors",
       });
       const result =  await response.json();
       console.log(result)
-console.log(response)
+// console.log(response)
       if (response.ok) {
         setMessage("Thank you! You've been added to the waitlist.");
         setEmail("");
