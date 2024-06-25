@@ -76,22 +76,23 @@ function Waitlist() {
     try {
       const response = await fetch(scriptURL, {
         method: "POST",
+        redirect: "follow",
         body: JSON.stringify({ email }),
         headers: {
           "Content-Type": "application/json",
         },
+        // mode: "no-cors",
       });
-
+      const result =  await response.json();
+      console.log(result)
+console.log(response)
       if (response.ok) {
         setMessage("Thank you! You've been added to the waitlist.");
         setEmail("");
       } else {
         setMessage("Something went wrong. Please try again.");
       }
-      //   } catch (error) {
-      //     setMessage("Error: " + error.message);
-      //   }
-      // };
+    
     } catch (error) {
       if (error instanceof Error) {
         setMessage("Error: " + error.message);
