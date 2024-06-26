@@ -5,7 +5,9 @@ function Waitlist() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleInputChange = (e: { target: { value: React.SetStateAction<string>; }; }) => {
+  const handleInputChange = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setEmail(e.target.value);
   };
 
@@ -31,16 +33,15 @@ function Waitlist() {
         },
         // mode: "no-cors",
       });
-      const result =  await response.json();
-      console.log(result)
-// console.log(response)
+      const result = await response.json();
+      console.log(result);
+      // console.log(response)
       if (response.ok) {
         setMessage("Thank you! You've been added to the waitlist.");
         setEmail("");
       } else {
         setMessage("Something went wrong. Please try again.");
       }
-    
     } catch (error) {
       if (error instanceof Error) {
         setMessage("Error: " + error.message);
@@ -67,21 +68,21 @@ function Waitlist() {
       {/* Content */}
       <div className="relative z-10 max-w-[1440px] mx-auto sm:px-[5%] px-[4%]">
         <div className="flex flex-col md:flex-row justify-center items-center min-h-screen">
-          <div className="flex flex-col items-center text-center">
+          <div className="flex flex-col items-center text-center max-w-screen-md">
             <div className="container bg-[#8A50F0] max-w-[211.1px] text-white mb-6 rounded-[9.6px_9.6px_1px_9.6px]">
               <div className="px-[9.6px] py-[4.8px]">Coming soon</div>
             </div>
-            <h1 className="gradient-text text-center font-semibold leading-none tracking-tight text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-[930.7px]">
+            <h1 className="gradient-text text-center font-semibold leading-none tracking-tight text-4xl md:text-5xl lg:text-6xl xl:text-7xl ">
               Start generating your own meal plans
             </h1>
-            <p className=" text-base text-[#FFFFFF]  font-light leading-[1.55] max-w-[800px] mt-6 mb-10">
+            <p className=" text-base text-[#FFFFFF]  font-light leading-[1.55]  max-w-[520px] mt-6 mb-10">
               Ditch the generic recommendations and get local meal plans based
               on your needs. Leave your email and we&apos;ll let you know when
               to begin!
             </p>
             <form
-              onSubmit={handleSubmit}
               className="relative w-full h-full max-w-[440px]"
+              onSubmit={handleSubmit}
             >
               <input
                 className=" w-full p-4 pr-32 font-medium placeholder-opacity-100 border rounded-full focus:outline-none  bg-neutral-800 text-[#FFFFFF] border-[#C566A6]"
