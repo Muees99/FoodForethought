@@ -66,7 +66,7 @@ function Waitlist() {
       </div>
       {/* Content */}
       <div className="relative z-10 max-w-[1440px] mx-auto sm:px-[5%] px-[4%]">
-        <div className="flex flex-col md:flex-row justify-center items-center min-h-[550px]">
+        <div className="flex flex-col md:flex-row justify-center items-center min-h-screen">
           <div className="flex flex-col items-center text-center">
             <div className="container bg-[#8A50F0] max-w-[211.1px] text-white mb-6 rounded-[9.6px_9.6px_1px_9.6px]">
               <div className="px-[9.6px] py-[4.8px]">Coming soon</div>
