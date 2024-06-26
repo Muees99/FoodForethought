@@ -5,6 +5,8 @@ function Waitlist() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  const [loading, setLoading] = useState(false); // New loading state
+
   const handleInputChange = (e: {
     target: { value: React.SetStateAction<string> };
   }) => {
@@ -19,16 +21,17 @@ function Waitlist() {
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    
-     if (!email) {
-       setMessage("Please enter an email.");
-       return;
-     }
+    if (!email) {
+      setMessage("Please enter an email.");
+      return;
+    }
 
-     if (!validateEmail(email)) {
-       setMessage("Please enter a valid email address.");
-       return;
-     }
+    if (!validateEmail(email)) {
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    setLoading(true); // Start loading
 
     const scriptURL =
       "https://script.google.com/macros/s/AKfycbx13h6lmak3b-q1HV1GAKbBc6b-0KkG1nU_QBwdsQUHWkl06B-Up9WzULXp0HiY1DZYNg/exec";
@@ -59,6 +62,8 @@ function Waitlist() {
       } else {
         setMessage("An unknown error occurred.");
       }
+    } finally {
+      setLoading(false); // End loading
     }
   };
 
@@ -101,13 +106,49 @@ function Waitlist() {
                 value={email}
                 onChange={handleInputChange}
                 placeholder="sample@email.com"
+                disabled={loading} // Disable input while loading
                 // required
               />
-              <Button
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full ml-8"
+              {/* <Button
+                className={`absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full ml-8 ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
                 type="submit"
+                disabled={loading} // Disable button while loading */}
+              {/* > */}
+              {/* Join waitlist */}
+              {/* Change button text during loading */}
+              {/* {loading ? "Submitting..." : "Join waitlist"}
+              </Button> */}
+              <Button
+                className={`absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full ml-4 ${
+                  loading ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                type="submit"
+                disabled={loading}
               >
-                Join waitlist
+                {loading ? (
+                  <svg
+                    className="animate-spin h-5 w-5 mr-3 text-white"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647zm16.99-2.647A7.963 7.963 0 0120 12h-4c0 2.676 1.344 5.043 3.385 6.486l3.605-3.842z"
+                    ></path>
+                  </svg>
+                ) : (
+                  "Join waitlist"
+                )}
               </Button>
             </form>
             {message && <p className="text-white mt-4">{message}</p>}
