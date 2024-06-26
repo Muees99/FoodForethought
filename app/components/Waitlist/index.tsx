@@ -19,10 +19,16 @@ function Waitlist() {
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
-    if (!email) {
-      setMessage("Please enter a valid email.");
-      return;
-    }
+    
+     if (!email) {
+       setMessage("Please enter an email.");
+       return;
+     }
+
+     if (!validateEmail(email)) {
+       setMessage("Please enter a valid email address.");
+       return;
+     }
 
     const scriptURL =
       "https://script.google.com/macros/s/AKfycbx13h6lmak3b-q1HV1GAKbBc6b-0KkG1nU_QBwdsQUHWkl06B-Up9WzULXp0HiY1DZYNg/exec";
@@ -95,7 +101,7 @@ function Waitlist() {
                 value={email}
                 onChange={handleInputChange}
                 placeholder="sample@email.com"
-                required
+                // required
               />
               <Button
                 className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full ml-8"
