@@ -11,6 +11,11 @@ function Waitlist() {
     setEmail(e.target.value);
   };
 
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
@@ -93,7 +98,7 @@ function Waitlist() {
                 required
               />
               <Button
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full ml-8"
                 type="submit"
               >
                 Join waitlist
