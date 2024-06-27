@@ -282,8 +282,8 @@ function Waitlist() {
               </h1>
               <p className="text-base text-[#FFFFFF] font-light leading-[1.55] max-w-[520px] mt-6 mb-10">
                 Ditch the generic recommendations and get local meal plans based
-                on your needs. Leave your email and we'll let you know when to
-                begin!
+                on your needs. Leave your email and we&apos;ll let you know when
+                to begin!
               </p>
               <form
                 className="relative w-full h-full max-w-[440px]"
@@ -337,8 +337,8 @@ function Waitlist() {
               Success!
             </h2>
             <p className="text-base text-[#FFFFFF] font-light leading-[1.55] max-w-[800px] mt-6">
-              Thank you for joining the waitlist. We'll notify you when we're
-              ready!
+              Thank you for joining the waitlist. We&apos;ll notify you when
+              we&apos;re ready!
             </p>
             <Button
               className="mt-8 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full"
