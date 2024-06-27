@@ -180,9 +180,6 @@
 
 // export default Waitlist;
 
-
-
-
 import React, { useState } from "react";
 import Button from "../Ui/Button";
 
@@ -192,7 +189,9 @@ function Waitlist() {
   const [loading, setLoading] = useState(false); // New loading state
   const [success, setSuccess] = useState(false); // New success state
 
-  const handleInputChange = (e: { target: { value: React.SetStateAction<string>; }; }) => {
+  const handleInputChange = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
     setEmail(e.target.value);
   };
 
@@ -201,7 +200,7 @@ function Waitlist() {
     return re.test(email);
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     if (!email) {
@@ -344,7 +343,7 @@ function Waitlist() {
               className="mt-8 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full"
               onClick={resetForm}
             >
-              Join the Waitlist with Another Email
+              Join Another Waitlist
             </Button>
           </div>
         )}
@@ -358,4 +357,3 @@ function Waitlist() {
 }
 
 export default Waitlist;
-
