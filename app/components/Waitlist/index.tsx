@@ -290,7 +290,7 @@ function Waitlist() {
               >
                 <input
                   className="w-full p-4 pr-32 font-medium placeholder-opacity-100 border rounded-full focus:outline-none bg-neutral-800 text-[#FFFFFF] border-[#C566A6]"
-                  type="email"
+                  // type="email"
                   value={email}
                   onChange={handleInputChange}
                   placeholder="sample@email.com"
