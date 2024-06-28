@@ -204,7 +204,7 @@ function Waitlist() {
     e.preventDefault();
 
     if (!email) {
-      setMessage("Please enter an email.");
+      setMessage("Please enter an email address.");
       return;
     }
 
@@ -236,13 +236,13 @@ function Waitlist() {
         setSuccess(true); // Set success state to true
         setEmail("");
       } else {
-        setMessage("Something went wrong. Please try again.");
+        setMessage( result.message || "Something went wrong. Please try again.");
       }
     } catch (error) {
       if (error instanceof Error) {
         setMessage("Error: " + error.message);
       } else {
-        setMessage("An error occurred. Please try again later.");
+        setMessage("Something went wrong, please try again.");
       }
     } finally {
       setLoading(false); // End loading
