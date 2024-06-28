@@ -180,14 +180,16 @@
 
 // export default Waitlist;
 
+
+
 import React, { useState } from "react";
 import Button from "../Ui/Button";
 
 function Waitlist() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(false); // New loading state
-  const [success, setSuccess] = useState(false); // New success state
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const handleInputChange = (e: {
     target: { value: React.SetStateAction<string> };
@@ -221,35 +223,43 @@ function Waitlist() {
     try {
       const response = await fetch(scriptURL, {
         method: "POST",
-        redirect: "follow",
         body: JSON.stringify({ email }),
         headers: {
           "Content-Type": "text/plain;charset=utf-8",
         },
-        // mode: "no-cors",
       });
+
       const result = await response.json();
-      console.log(result);
 
       if (response.ok) {
-        setMessage("Thank you! You've been added to the waitlist.");
-        setSuccess(true); // Set success state to true
-        setEmail("");
+        if (result.result === "success") {
+          setMessage("Thank you! You've been added to the waitlist.");
+          setSuccess(true); // Set success state to true
+          setEmail("");
+
+          // Set a timeout to reset the form after 5 seconds (5000 milliseconds)
+          setTimeout(() => {
+            resetForm();
+          }, 5000);
+
+
+        } else if (result.result === "error") {
+          if (result.message === "You’re already on the waitlist!") {
+            setMessage(result.message);
+          } else {
+            setMessage("Something went wrong. Please try again.");
+          }
+        }
       } else {
-        setMessage( result.message || "Something went wrong. Please try again.");
+        setMessage("Something went wrong. Please try again.");
       }
     } catch (error) {
-      if (error instanceof Error) {
-        setMessage("Error: " + error.message);
-      } else {
-        setMessage("Something went wrong, please try again.");
-      }
+      setMessage("Something went wrong, please try again.");
     } finally {
-      setLoading(false); // End loading
+      setLoading(false); // End  loading
     }
   };
 
-  // Reset the form to initial state
   const resetForm = () => {
     setMessage("");
     setSuccess(false);
@@ -327,7 +337,7 @@ function Waitlist() {
                   )}
                 </Button>
               </form>
-              {message && <p className="text-white mt-4">{message}</p>}
+              {message && <p className="text-[#FF7C5B] mt-4">{message}</p>}
             </div>
           </div>
         ) : (
@@ -339,12 +349,12 @@ function Waitlist() {
               Thank you for joining the waitlist. We&apos;ll notify you when
               we&apos;re ready!
             </p>
-            <Button
+            {/* <Button
               className="mt-8 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full"
               onClick={resetForm}
             >
               Join Another Waitlist
-            </Button>
+            </Button> */}
           </div>
         )}
       </div>
