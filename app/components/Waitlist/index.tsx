@@ -346,8 +346,9 @@ function Waitlist() {
               Success!
             </h2>
             <p className="text-base text-[#FFFFFF] font-light leading-[1.55] max-w-[800px] mt-6">
-              Thank you for joining the waitlist. We&apos;ll notify you when
-              we&apos;re ready!
+              {/* Thank you for joining the waitlist. We&apos;ll notify you when
+              we&apos;re ready! */}
+              Yes! You&apos;re in. Look out for an email from us!
             </p>
             {/* <Button
               className="mt-8 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full"
