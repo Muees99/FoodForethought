@@ -307,7 +307,8 @@ function Waitlist() {
                   disabled={loading} // Disable input while loading
                 />
                 <Button
-                  className={`absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-4 py-2 rounded-full ml-4 ${
+                  className={`absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0]  text-white text-sm font-medium leading-snug text-center rounded-full ml-4 ${
+                    // absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-br from-[#ff7c5b] to-[#8a50f0] text-[#FFFFFF] px-2 py-1 text-sm rounded-full ml-4
                     loading ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                   type="submit"
