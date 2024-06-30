@@ -209,7 +209,7 @@ function Waitlist() {
     }
 
     if (!validateEmail(email)) {
-      setMessage("Please enter a valid email address.");
+      setMessage("Oh no! This isn’t a valid email. Try again?");
       return;
     }
 
@@ -243,11 +243,11 @@ function Waitlist() {
           if (result.message === "You’re already on the waitlist!") {
             setMessage(result.message);
           } else {
-            setMessage("Something went wrong. Please try again.");
+            setMessage("Something went wrong, please try again.");
           }
         }
       } else {
-        setMessage("Something went wrong. Please try again.");
+        setMessage("Something went wrong, please try again.");
       }
     } catch (error) {
       setMessage("Something went wrong, please try again.");
@@ -373,8 +373,6 @@ function Waitlist() {
 }
 
 export default Waitlist;
-
-
 
 // import React, { useState } from "react";
 // import Button from "../Ui/Button";
